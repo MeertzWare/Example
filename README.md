@@ -2,4 +2,4 @@
 Code examples by MeertzWare for you!
 
 
-In the following Repo. you can find code examples from the MeertzWare-Code-Archive.
+In the following repo. you can find code examples from the MeertzWare-Code-Archive.
