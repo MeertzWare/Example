@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+ <head>
+<link rel="stylesheet" href="1.css" />
+   <script type="text/javascript">
+	function insert(elem) {
+		document.getElementById("rechnen").value += elem;
+	}
+	
+	function rechnen() {
+		document.getElementById("rechnen").value = eval(document.getElementById("rechnen").value);
+	}
+   </script>
+ </head>
+ <body><div align="center">
+	<h1>Taschenrechner</h1>
+	<input type="text" id="rechnen" id="rechnen" style=" width: 206px; height: 50px; border: 1; border-color: black; background-color: #cccccc;" />
+    <table border="0" align="center">
+		<tr><td><input type="button" value="7" onclick="insert(7)" style=" width: 50px; height: 50px; border: 1; border-color: blue; background-color: #cccccc;" /></td>
+		<td><input type="button" value="8" onclick="insert(8)" style=" width: 50px; height: 50px; border: 1; border-color: blue; background-color: #cccccc;" /></td>
+		<td><input type="button" value="9" onclick="insert(9)" style=" width: 50px; height: 50px; border: 1; border-color: blue; background-color: #cccccc;" /></td>
+		<td><input type="button" value="+" onclick="insert('+')" style=" width: 50px; height: 50px; border: 1; border-color: yellow; background-color: #cccccc;" /></td></tr>
+		<tr><td><input type="button" value="4" onclick="insert(4)" style=" width: 50px; height: 50px; border: 1; border-color: blue; background-color: #cccccc;" /></td>
+		<td><input type="button" value="5" onclick="insert(5)" style=" width: 50px; height: 50px; border: 1; border-color: blue; background-color: #cccccc;" /></td>
+		<td><input type="button" value="6" onclick="insert(6)" style=" width: 50px; height: 50px; border: 1; border-color: blue; background-color: #cccccc;" /></td>
+		<td><input type="button" value="-" onclick="insert('-')" style=" width: 50px; height: 50px; border: 1; border-color: yellow; background-color: #cccccc;" /></td></tr>
+		<tr><td><input type="button" value="1" onclick="insert(1)" style=" width: 50px; height: 50px; border: 1; border-color: blue; background-color: #cccccc;" /></td>
+		<td><input type="button" value="2" onclick="insert(2)" style=" width: 50px; height: 50px; border: 1; border-color: blue; background-color: #cccccc;" /></td><td>
+		<input type="button" value="3" onclick="insert(3)" style=" width: 50px; height: 50px; border: 1; border-color: blue; background-color: #cccccc;" /></td><td>
+		<input type="button" value="x" onclick="insert('*')" style=" width: 50px; height: 50px; border: 1; border-color: yellow; background-color: #cccccc;" /></td></tr>
+		<tr><td><input type="button" value="0" onclick="insert(0)" style=" width: 50px; height: 50px; border: 1; border-color: blue; background-color: #cccccc;" /></td>
+		<td>&nbsp;</td><td><input type="button" value="," onclick="insert('.')" style=" width: 50px; height: 50px; border: 1; border-color: blue; background-color: #cccccc;" /></td><td><input type="button" value=":" onclick="insert('/')" style=" width: 50px; height: 50px; border: 1; border-color: yellow; background-color: #cccccc;" /></td></tr>
+	</table>
+
+	
+	<input type="button" value=" = " onclick="rechnen()" class="erg" style=" width: 206px; height: 50px; border: 1; border-color: green; background-color: #cccccc;" /><p>
+	<input type="reset" value="DEL" onClick="document.getElementById('rechnen').value = '';" class="erg" style=" width: 206px; height: 50px; border: 1; border-color: red; background-color: #cccccc;" />
+ </div></body>
+</html>
