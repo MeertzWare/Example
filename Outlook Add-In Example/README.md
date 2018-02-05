@@ -1,6 +1,6 @@
 # Example Add-in for Outlook #
 
-This is a simple [add-in for Outlook](https://msdn.microsoft.com/EN-US/library/office/fp161135.aspx) that allows you, to connect with an example data base with contact data and put the mail-address as your recipient. It's based on the starter project that Visual Studio 2013 creates when you select the **App for Office** project template.
+This is a simple [add-in for Outlook](https://msdn.microsoft.com/EN-US/library/office/fp161135.aspx) that allows you, to connect with an example database with contact data and put the mail-address as your recipient. It's based on the starter project that Visual Studio 2013 creates when you select the **App for Office** project template.
 
 ## What you'll need ##
 
