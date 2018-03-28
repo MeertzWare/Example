@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <title>AngularJs Simple Comment System</title>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+            #commentsection{ border:1px solid #DBDCE9;  margin-left:auto; margin-right:auto;  width:550px; border-radius:7px;   padding: 25px; }
+            div {width: 200px;}
+        </style>
+    </head>
+    <body>
+        <div id='commentsection'>
+            <form ng-controller="FrmController">
+                Write your opinion or just say hello!
+                <form ng-controller="FrmController">
+                    <textarea ng-model="txtcomment" placeholder="Your Comment" style='width:500px'></textarea>
+                    <div align="center"><button class="btn btn-success" ng-click='btn_add();' style='margin-top:10px; margin-left: 100%;'>POST IT!</button></div>
+ 
+                    <h4>Comments</h4>
+                    <ul class="list-group">
+                        <li ng-repeat="comnt in comment" class="list-group-item"> {{ comnt }} <a  style="float: right;" href="" ng-click="remItem($index)"><span class="badge">X</span></a></li>
+                    </ul>
+                </form> 
+        </div>
+ 
+        <script type="text/javascript">
+            function FrmController($scope) {
+                $scope.comment = [];
+                $scope.btn_add = function() {
+                    if($scope.txtcomment !=''){
+                    $scope.comment.push($scope.txtcomment);
+                    $scope.txtcomment = "";
+                    }
+                }
+ 
+                $scope.remItem = function($index) {
+                    $scope.comment.splice($index, 1);
+                }
+            }
+        </script>
+
+    </body>
+
+</html>
