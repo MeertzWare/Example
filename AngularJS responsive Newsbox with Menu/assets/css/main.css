@@ -1,0 +1,99 @@
+#togglebutton {
+
+    margin-bottom: -33px;
+    padding: 8px;
+    margin-top: -8px;
+    text-align: center;
+
+}
+
+#newsstand {
+
+    position: fixed;
+    
+    width: 468px;
+    
+    bottom: 0;
+    
+    right: 0;
+
+}
+    
+    .nebi {
+    
+        float: left;
+        max-width: 150px;
+        height: auto;
+        padding-right: 25px;
+    
+    }
+    
+    .datum {
+    
+        font-size: 11px;
+    
+    }
+    
+    .headline {
+    
+color: #2c84ce;
+    
+margin-left: 175px;
+    
+margin-top: 13px;
+    
+font-size: 20px;
+    }
+    
+.teasertxt {
+    
+margin-top: -14px;
+    
+margin-left: 175px;
+    
+font-size: 15px;
+    }
+    
+    .mroeinfo {
+    
+color: black;
+    
+margin-top: 4px;
+    
+margin-left: 196px;
+    
+float: left;
+    }
+
+.md-nav-bar {
+
+    background-color: #2a7ac1 !important;
+    padding-top: 10px;
+
+}
+
+.md-button.md-default-theme.md-accent, .md-button.md-accent {
+
+    color: #2a7ac1 !important;
+    background-color: #fff !important;
+
+}
+
+.md-nav-bar.md-default-theme .md-button._md-nav-button.md-unselected, md-nav-bar .md-button._md-nav-button.md-unselected {
+
+    color: #fff !important;
+    background-color: #2a7ac1 !important;
+
+}
+
+.md-nav-bar.md-default-theme md-nav-ink-bar, md-nav-bar md-nav-ink-bar {
+
+    background: #2a7ac1 !important;
+
+}
+
+ul li {
+
+    margin-top: 0px;
+
+}

@@ -1,0 +1,50 @@
+{
+    "news1": {
+        "bild" : "assets/img/news1.jpg",
+        "Date" : "03.07.2015",
+        "HL"   : "Einladung zur Jahrespressekonferenz",
+        "txt"  : "",
+        "link" : "https://news.google.com/"
+    },
+
+    "news2": {
+        "bild" : "assets/img/news2.jpg",
+        "Date" : "03.07.2015",
+        "HL"   : "Studienstart im Juni",
+        "txt"  : "Studie zu rheumatoider Arthritis (RA)",
+        "link" : "https://news.google.com/"
+    },
+
+    "news3": {
+        "bild" : "assets/img/news3.jpg",
+        "Date" : "03.07.2015",
+        "HL"   : "Herzenssache - Patienten warten auf ein Spenderherz",
+        "txt"  : "TV-Tipp: Ein Beitrag in der WDR Mediathek",
+        "link" : "https://news.google.com/"
+    },
+
+    "events1": {
+        "bild" : "assets/img/events1.gif",
+        "Date" : "15.04.2018",
+        "HL"   : "Party in Mannheim",
+        "txt"  : "Feirt mit uns in den Sommer!",
+        "link" : "https://www.google.de/search?q=events+in+meiner+nähe&oq=events+in+meiner+nähe"
+    },
+
+    "events2": {
+        "bild" : "assets/img/events2.gif",
+        "Date" : "10.05.2018",
+        "HL"   : "Grillfest der Feuerwehr",
+        "txt"  : "Familientag der Feuerwehr, Eintritt 5€ x Person",
+        "link" : "https://www.google.de/search?q=events+in+meiner+nähe&oq=events+in+meiner+nähe"
+    },
+
+    "events3": {
+        "bild" : "assets/img/events3.gif",
+        "Date" : "01.06.2018",
+        "HL"   : "Rock am Ring",
+        "txt"  : "Mit Babymetal, ALMA, Gorillaz und vielen mehr...",
+        "link" : "http://www.rock-am-ring.com/"
+    }
+
+}

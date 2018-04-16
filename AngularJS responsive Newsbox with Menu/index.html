@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+    <head>
+        <title>Brandung Testaufgabe</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link rel='stylesheet' href='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.5/angular-material.css'>
+        <link rel='stylesheet' href='https://material.angularjs.org/1.1.5/docs.css'>
+        <link rel='stylesheet' href='assets/css/main.css' media="only screen and (min-device-width: 768px)">
+        <link rel="stylesheet" href="assets/css/mobile.main.css" type="text/css" media="only screen and (min-device-width: 320px) and (max-device-width: 768px)" />
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    </head>
+    <body>
+        <div id="newsstand">
+        <div id="togglebutton"><p><i class="fas fa-arrows-alt-v" style="color: #2a7ac1;"></i> Toggle Newsbox <i class="fas fa-arrows-alt-v" style="color: #2a7ac1;"></i></p></div>
+            <div ng-controller="AppCtrl" ng-cloak="" class="navBardemoBasicUsage" ng-app="MyApp">
+                <md-content class="md-padding">
+                    <md-nav-bar md-no-ink-bar="disableInkBar" md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+                    <md-nav-item md-nav-click="goto('news')" name="news">
+                        Aktuelles
+                    </md-nav-item>
+                    <md-nav-item md-nav-click="goto('events')" name="events" style="margin-left: -7px !important;">
+                        Veranstaltungen
+                    </md-nav-item>
+                    
+                    </md-nav-bar>
+                    <div class="ext-content" style="margin-top: 20px;">
+                    <img class="nebi" src="{{bild1}}" /><span class="datum">{{Date1}}</span><p class="headline">{{HL1}}</p><p class="teasertxt">{{teasertxt1}}</p><a href="{{newslink1}}" target="_blank" class="mroeinfo"><b style="color: blue;">></b> mehr Informationen</a><br><br><hr><br>
+                    <br><img class="nebi" src="{{bild2}}" /><span class="datum">{{Date2}}</span><p class="headline">{{HL2}}</p><p class="teasertxt">{{teasertxt2}}</p><a href="{{newslink2}}" target="_blank" class="mroeinfo"><b style="color: blue;">></b> mehr Informationen</a><br><br><hr><br>
+                    <br><img class="nebi" src="{{bild3}}" /><span class="datum">{{Date3}}</span><p class="headline">{{HL3}}</p><p class="teasertxt">{{teasertxt3}}</p><a href="{{newslink3}}" target="_blank" class="mroeinfo"><b style="color: blue;">></b> mehr Informationen</a><br><br><hr><br>
+                    <a href="{{newslink3}}" target="_blank" class="mroeinfo" style="float: right;"><b style="color: blue;">></b> Alle {{currentNavItem}} in der Übersicht</a>
+                    </div>
+                
+                </md-content>
+            </div>
+        </div>
+        <script>
+            $( "#togglebutton" ).click(function() {
+                $( ".navBardemoBasicUsage" ).slideToggle( "slow" );
+            });
+        </script>
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js'></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js'></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js'></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js'></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js'></script>
+        <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js'></script>
+        <script src='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.5/angular-material.js'></script>
+        <script>
+
+            var newstypearray = ['news', 'events'];
+            var randtype = newstypearray[Math.floor(Math.random() * newstypearray.length)];
+
+            //Parse JSON News File (for local testing) [source: assets/js/news.json]
+            var data = '{     "news1": {         "bild" : "assets/img/news1.jpg",         "Date" : "03.07.2015",         "HL"   : "Einladung zur Jahrespressekonferenz",         "txt"  : "",         "link" : "https://news.google.com/"     },      "news2": {         "bild" : "assets/img/news2.jpg",         "Date" : "03.07.2015",         "HL"   : "Studienstart im Juni",         "txt"  : "Studie zu rheumatoider Arthritis (RA)",         "link" : "https://news.google.com/"     },      "news3": {         "bild" : "assets/img/news3.jpg",         "Date" : "03.07.2015",         "HL"   : "Herzenssache - Patienten warten auf ein Spenderherz",         "txt"  : "TV-Tipp: Ein Beitrag in der WDR Mediathek",         "link" : "https://news.google.com/"     },      "events1": {         "bild" : "assets/img/events1.gif",         "Date" : "15.04.2018",         "HL"   : "Party in Mannheim",         "txt"  : "Feirt mit uns in den Sommer!",         "link" : "https://www.google.de/search?q=events+in+meiner+nähe&oq=events+in+meiner+nähe"     },      "events2": {         "bild" : "assets/img/events2.gif",         "Date" : "10.05.2018",         "HL"   : "Grillfest der Feuerwehr",         "txt"  : "Familientag der Feuerwehr, Eintritt 5€ x Person",         "link" : "https://www.google.de/search?q=events+in+meiner+nähe&oq=events+in+meiner+nähe"     },      "events3": {         "bild" : "assets/img/events3.gif",         "Date" : "01.06.2018",         "HL"   : "Rock am Ring",         "txt"  : "Mit Babymetal, ALMA, Gorillaz und vielen mehr...",         "link" : "http://www.rock-am-ring.com/"     }  }';
+
+            var json = JSON.parse(data);
+
+            //AngularJS Navigation
+            (function() {
+                'use strict';
+                
+                angular.module('MyApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
+                    .controller('AppCtrl', AppCtrl);
+                
+                function AppCtrl($scope) {
+                    $scope.currentNavItem = randtype;
+                    if (randtype == 'news') {
+                        $scope.bild1 = json.news1.bild;
+                        $scope.Date1 = json.news1.Date;
+                        $scope.HL1 = json.news1.HL;
+                        $scope.teasertxt1 = json.news1.txt;
+                        $scope.newslink1 = json.news1.link;
+
+                        $scope.bild2 = json.news2.bild;
+                        $scope.Date2 = json.news2.Date;
+                        $scope.HL2 = json.news2.HL;
+                        $scope.teasertxt2 = json.news2.txt;
+                        $scope.newslink2 = json.news2.link;
+
+                        $scope.bild3 = json.news3.bild;
+                        $scope.Date3 = json.news3.Date;
+                        $scope.HL3 = json.news3.HL;
+                        $scope.teasertxt3 = json.news3.txt;
+                        $scope.newslink3 = json.news3.link;
+
+                    }
+                    else {
+
+                        $scope.bild1 = json.events1.bild;
+                        $scope.Date1 = json.events1.Date;
+                        $scope.HL1 = json.events1.HL;
+                        $scope.teasertxt1 = json.events1.txt;
+                        $scope.newslink1 = json.events1.link;
+
+                        $scope.bild2 = json.events2.bild;
+                        $scope.Date2 = json.events2.Date;
+                        $scope.HL2 = json.events2.HL;
+                        $scope.teasertxt2 = json.events2.txt;
+                        $scope.newslink2 = json.events2.link;
+
+                        $scope.bild3 = json.events3.bild;
+                        $scope.Date3 = json.events3.Date;
+                        $scope.HL3 = json.events3.HL;
+                        $scope.teasertxt3 = json.events3.txt;
+                        $scope.newslink3 = json.events3.link;
+
+
+                    }
+                    
+
+                    $scope.goto = function(page) {
+                    if (page == 'news') {
+                        $scope.bild1 = json.news1.bild;
+                        $scope.Date1 = json.news1.Date;
+                        $scope.HL1 = json.news1.HL;
+                        $scope.teasertxt1 = json.news1.txt;
+                        $scope.newslink1 = json.news1.link;
+
+                        $scope.bild2 = json.news2.bild;
+                        $scope.Date2 = json.news2.Date;
+                        $scope.HL2 = json.news2.HL;
+                        $scope.teasertxt2 = json.news2.txt;
+                        $scope.newslink2 = json.news2.link;
+
+                        $scope.bild3 = json.news3.bild;
+                        $scope.Date3 = json.news3.Date;
+                        $scope.HL3 = json.news3.HL;
+                        $scope.teasertxt3 = json.news3.txt;
+                        $scope.newslink3 = json.news3.link;
+                        
+                    }
+
+                    else {
+
+                        $scope.bild1 = json.events1.bild;
+                        $scope.Date1 = json.events1.Date;
+                        $scope.HL1 = json.events1.HL;
+                        $scope.teasertxt1 = json.events1.txt;
+                        $scope.newslink1 = json.events1.link;
+
+                        $scope.bild2 = json.events2.bild;
+                        $scope.Date2 = json.events2.Date;
+                        $scope.HL2 = json.events2.HL;
+                        $scope.teasertxt2 = json.events2.txt;
+                        $scope.newslink2 = json.events2.link;
+
+                        $scope.bild3 = json.events3.bild;
+                        $scope.Date3 = json.events3.Date;
+                        $scope.HL3 = json.events3.HL;
+                        $scope.teasertxt3 = json.events3.txt;
+                        $scope.newslink3 = json.events3.link;
+
+                    }
+                    }
+                }
+            })();
+        </script>
+    </body>
+
+</html>
